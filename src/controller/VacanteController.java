@@ -71,17 +71,17 @@ public class VacanteController {
     }
 
     public static void getAllTitulo(){
-        Vacante op = (Vacante) JOptionPane.showInputDialog(null,
+        String op = (String) JOptionPane.showInputDialog(null,
                 "Selecciona el titulo a buscar",
                 "",
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 titulos(instanceOfVacanteModel().findAll()),
                 titulos(instanceOfVacanteModel().findAll())[0]);
-        String titulo = op.getTitulo();
-        String listVacante = "LISTA POR " +  titulo + "\n";
 
-        for (Object iterador: instanceOfVacanteModel().findByTitulo(titulo)){
+        String listVacante = "LISTA POR " +  op + "\n";
+
+        for (Object iterador: instanceOfVacanteModel().findByTitulo(op)){
             Vacante objVacante = (Vacante) iterador;
             listVacante += objVacante.toString() + "\n";
         }
@@ -90,17 +90,17 @@ public class VacanteController {
     }
 
     public static void getAllTecnologia(){
-        Vacante op = (Vacante) JOptionPane.showInputDialog(null,
+        String op = (String) JOptionPane.showInputDialog(null,
                 "Selecciona la tecnologia a buscar",
                 "",
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 tecnologias(instanceOfVacanteModel().findAll()),
                 tecnologias(instanceOfVacanteModel().findAll())[0]);
-        String tecnologia = op.getTitulo();
-        String listVacante = "LISTA POR " +  tecnologia + "\n";
 
-        for (Object iterador: instanceOfVacanteModel().findByTecnologia(tecnologia)){
+        String listVacante = "LISTA POR " +  op + "\n";
+
+        for (Object iterador: instanceOfVacanteModel().findByTecnologia(op)){
             Vacante objVacante = (Vacante) iterador;
             listVacante += objVacante.toString() + "\n";
         }

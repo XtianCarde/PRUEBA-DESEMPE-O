@@ -38,8 +38,9 @@ public class ContratacionController {
                 estados(),
                 estados()[0]);
 
-        if (estado.toString() == "ACTIVA"){
-            objVacante.setEstado("INACTIVA");
+        if (estado.toString() == "ACTIVO"){
+            objVacante.setEstado("INACTIVO");
+            instanceOfVacanteModel().update(objVacante);
         }
 
         double salario = Double.parseDouble(JOptionPane.showInputDialog("Ingresa el salario para el coder"));

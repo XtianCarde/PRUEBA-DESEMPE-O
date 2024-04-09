@@ -95,8 +95,8 @@ public class Contratacion {
         return "Contratacion: " +
                 "fecha_aplicacion' " + fecha_aplicacion + '\'' +
                 ", estado: " + estado +
-                ", salario: " + salario +
-                ", " + vacante.toString() +
-                ", " + coder.toString();
+                ", salario: " + salario +  "\n" +
+                " " + vacante.toString() + "\n" +
+                " " + coder.toString() + "\n";
     }
 }

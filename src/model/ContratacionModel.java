@@ -84,7 +84,7 @@ public class ContratacionModel implements CRUD {
                 Contratacion objContratacion = new Contratacion(objResult.getInt("contratacion.id"),
                         objResult.getInt("contratacion.vacante_id"),
                         objResult.getInt("contratacion.coder_id"),
-                        objResult.getString("contratacion.fecha_aplicaion"),
+                        objResult.getString("contratacion.fecha_aplicacion"),
                         objResult.getString("contratacion.estado"),
                         objResult.getDouble("contratacion.salario"),
                         objVacante,

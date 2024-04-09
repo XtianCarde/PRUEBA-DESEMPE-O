@@ -247,4 +247,30 @@ public class VacanteModel implements CRUD {
         }
         return isUpdated;
     }
+
+    public boolean updateEstado(Object obj) {
+        Connection objConnection = ConfigDb.openConnection();
+        Vacante objVacante = (Vacante) obj;
+        boolean isUpdated = false;
+        try {
+            String sql = "UPDATE vacante SET estado = ? WHERE id = ?";
+
+            PreparedStatement objPrepare = objConnection.prepareStatement(sql);
+
+            objPrepare.setString(1,objVacante.getEstado());
+            objPrepare.setInt(2,objVacante.getId());
+
+
+            int totalRowsAffected = objPrepare.executeUpdate();
+
+            if (totalRowsAffected > 0){
+                isUpdated = true;
+            }
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e.getMessage());
+        } finally {
+            ConfigDb.closeConnection();
+        }
+        return isUpdated;
+    }
 }
