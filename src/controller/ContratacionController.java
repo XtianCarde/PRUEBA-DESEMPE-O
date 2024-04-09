@@ -116,7 +116,6 @@ public class ContratacionController {
         String estado = "ACTIVO";
         double salario = Double.parseDouble(JOptionPane.showInputDialog(null,"Ingresa el salario para el coder",objContratacion.getSalario()));
 
-        objContratacion = new Contratacion();
         objContratacion.setCoder_id(objCoder.getId());
         objContratacion.setVacante_id(objVacante.getId());
         objContratacion.setSalario(salario);

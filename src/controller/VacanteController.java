@@ -157,7 +157,6 @@ public class VacanteController {
                 estados(),
                 objVacante.getEstado());
 
-        objVacante = new Vacante();
         objVacante.setEmpresa_id(objEmpresa.getId());
         objVacante.setEmpresa(objEmpresa);
         objVacante.setTitulo(titulo);

@@ -140,7 +140,7 @@ public class CoderModel implements CRUD {
         List<Object> listCoders = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM coder WHERE coder.tecnologia LIKE ?;";
+            String sql = "SELECT * FROM coder WHERE coder.cv LIKE ?;";
             PreparedStatement objPrepare = objConnection.prepareStatement(sql);
 
             objPrepare.setString(1,"%" + tecnologia + "%");
@@ -216,7 +216,7 @@ public class CoderModel implements CRUD {
         Coder objCoder = (Coder) obj;
         boolean isUpdated = false;
         try {
-            String sql = "UPDATE coder SET nombre = ?,apellidos = ?,documento = ?,cohorte = ?,cv = ?,clan = ? WHERE id = ?";
+            String sql = "UPDATE coder SET nombre = ?,apellidos = ?,documento = ?,cohorte = ?,cv = ?,clan = ? WHERE id = ?;";
 
             PreparedStatement objPrepare = objConnection.prepareStatement(sql);
 

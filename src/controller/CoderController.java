@@ -126,15 +126,14 @@ public class CoderController {
                 op,
                 op[0]);
 
-        String doc = JOptionPane.showInputDialog(null,"Ingresa el documento",objCoder.getDocumento());
-        if (!instanceOfCoderModel().findByDocumento(doc)){
+            String doc = JOptionPane.showInputDialog(null,"Ingresa el documento",objCoder.getDocumento());
             String nombre = JOptionPane.showInputDialog(null,"Ingresa el nombre",objCoder.getNombre());
             String apellidos = JOptionPane.showInputDialog(null,"Ingresa los apellidos",objCoder.getApellidos());
-            int cohorte = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrsa la cohorte"),objCoder.getCohorte());
+            int cohorte = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa la cohorte",objCoder.getCohorte()));
             String cv = JOptionPane.showInputDialog(null,"Ingresa el cv",objCoder.getCv());
             String clan = JOptionPane.showInputDialog(null,"Ingresa el clan",objCoder.getClan());
 
-            objCoder = new Coder();
+
             objCoder.setNombre(nombre);
             objCoder.setApellidos(apellidos);
             objCoder.setDocumento(doc);
@@ -143,9 +142,5 @@ public class CoderController {
             objCoder.setCv(cv);
 
             instanceOfCoderModel().update(objCoder);
-            JOptionPane.showMessageDialog(null,objCoder.toString());
-        } else {
-            JOptionPane.showMessageDialog(null,"Ya existe un(a) coder con dicho documento!.");
-        }
     }
 }
