@@ -171,7 +171,7 @@ public class CoderModel implements CRUD {
             String sql = "SELECT * FROM coder WHERE coder.documento LIKE ?;";
             PreparedStatement objPrepare = objConnection.prepareStatement(sql);
 
-            objPrepare.setString(1,"%" + documento + "%");
+            objPrepare.setString(1,documento);
             ResultSet objResult = objPrepare.executeQuery();
             while (objResult.next()){
                 exist = true;

@@ -35,7 +35,6 @@ public class ContratacionModel implements CRUD {
             ResultSet objResult = objPrepare.getGeneratedKeys();
             while (objResult.next()){
                 objContratacion.setId(objResult.getInt(1));
-                objContratacion.setFecha_aplicacion(objResult.getString("fecha_aplicacion"));
             }
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null,e.getMessage());
@@ -118,6 +117,7 @@ public class ContratacionModel implements CRUD {
             if (totalRowsAffected > 0){
                 isDeleted = true;
                 JOptionPane.showMessageDialog(null,objContratacion.toString() + "\nContratación eliminada correctamente!!");
+
             }
         } catch (SQLException e){
             JOptionPane.showMessageDialog(null,e.getMessage());
